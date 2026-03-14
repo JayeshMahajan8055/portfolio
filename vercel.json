@@ -1,0 +1,12 @@
+{
+  "framework": "vite",
+  "installCommand": "npm --prefix jayesh install",
+  "buildCommand": "npm --prefix jayesh run build",
+  "outputDirectory": "jayesh/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
