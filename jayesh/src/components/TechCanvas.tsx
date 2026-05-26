@@ -33,7 +33,11 @@ const skillItems = [
   { name: "TypeScript", image: "/images/typescript.webp" },
   { name: "JavaScript", image: "/images/javascript.webp" },
 ];
-const skillTextures = skillItems.map((item) => textureLoader.load(item.image));
+const skillTextures = skillItems.map((item) => {
+  const tex = textureLoader.load(item.image);
+  tex.encoding = THREE.sRGBEncoding;
+  return tex;
+});
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -143,18 +147,23 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
 
 const TechCanvas = ({ isActive }: { isActive: boolean }) => {
   const materials = useMemo(() => {
-    return skillTextures.map(
-      (texture) =>
-        new THREE.MeshPhysicalMaterial({
-          map: texture,
-          emissive: "#ffffff",
-          emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
-        })
-    );
+    return skillTextures.map((texture) => {
+      const mat = new THREE.MeshPhysicalMaterial({
+        map: texture || null,
+        emissiveMap: texture || null,
+        emissive: new THREE.Color("#ffffff"),
+        emissiveIntensity: 0.9,
+        color: "#ffffff",
+        metalness: 0.0,
+        roughness: 0.9,
+        clearcoat: 0,
+      });
+      if (texture) {
+        texture.encoding = THREE.sRGBEncoding;
+        texture.needsUpdate = true;
+      }
+      return mat;
+    });
   }, []);
 
   return (
