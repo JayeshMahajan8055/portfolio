@@ -13,6 +13,17 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 const skillItems = [
+  { name: "Generative AI", image: "/images/ai.webp" },
+  { name: "Azure OpenAI", image: "/images/ai.webp" },
+  { name: "OpenAI API", image: "/images/ai.webp" },
+  { name: "Llama 3", image: "/images/ai.webp" },
+  { name: "Mistral", image: "/images/ai.webp" },
+  { name: "Hugging Face", image: "/images/ai.webp" },
+  { name: "LangChain", image: "/images/ai.webp" },
+  { name: "LlamaIndex", image: "/images/ai.webp" },
+  { name: "RAG", image: "/images/ai.webp" },
+  { name: "Prompt Engineering", image: "/images/ai.webp" },
+  { name: "Embeddings", image: "/images/ai.webp" },
   { name: "React", image: "/images/react2.webp" },
   { name: "Next.js", image: "/images/next2.webp" },
   { name: "Node.js", image: "/images/node2.webp" },
