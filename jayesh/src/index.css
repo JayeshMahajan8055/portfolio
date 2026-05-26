@@ -124,6 +124,24 @@ body {
   text-transform: uppercase;
 }
 
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(6, 10, 18, 0.72);
+  border: 1px solid rgba(94, 234, 212, 0.28);
+  color: #f3f5f7;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
 @media screen and (min-width: 768px) {
   body {
     --cWidth: 94%;

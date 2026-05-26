@@ -10,10 +10,10 @@
   margin: auto;
 }
 .about-me {
-  padding: 50px 0px;
+  padding: 60px 0px;
   padding-bottom: 0;
-  width: 500px;
-  max-width: calc(100% - 15px);
+  width: auto;
+  max-width: calc(100% - 30px);
 }
 .about-me h3 {
   font-size: 25px;
@@ -24,10 +24,13 @@
 }
 
 .about-me p {
-  font-size: 33px;
-  font-weight: 600;
-  line-height: 36px;
-  letter-spacing: 1px;
+  /* keep characters per line readable and increase line spacing */
+  font-size: clamp(0.98rem, 1.6vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
+  margin: 0 0 1rem 0;
+  max-width: 55ch;
 }
 
 @media only screen and (min-width: 600px) {
@@ -37,7 +40,7 @@
 }
 @media only screen and (min-width: 768px) {
   .about-me {
-    width: 500px;
+    width: auto;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
   }
@@ -55,12 +58,13 @@
     opacity: 1;
   }
   .about-me {
-    padding: 0px;
+    padding: 30px 0;
     width: 50%;
+    max-width: 65ch;
   }
   .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
+    font-size: clamp(1.1rem, 1.9vw, 2rem);
+    line-height: 1.6;
   }
 }
 @media only screen and (min-width: 1950px) {
